@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Cell" version="4">
+  <OBJECT>
+    <ID name="Cell" mc="Standard.Class" uid="24193e47-32b0-4a7e-bb1d-627c5e594192"/>
+    <PID name="entity" mc="Standard.Package" uid="fc6c0dad-e802-459f-8ad9-d0177d7a6370"/>
+    <ATTRIBUTES>
+      <ATT name="IsActive">false</ATT>
+      <ATT name="IsMain">false</ATT>
+      <ATT name="IsElementary">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[Cell]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="Ligne:int" mc="Standard.Component" uid="bc49c5db-3c70-46d7-a8c7-5fba971041ac"/>
+        <COMPID name="Colonne:int" mc="Standard.Component" uid="a079b2ae-7722-4ede-b578-3e4f37bc18bc"/>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="JavaClass" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0258-0000-000000000000"/>
+      </LINK>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>
