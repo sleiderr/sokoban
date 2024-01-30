@@ -10,8 +10,7 @@ import java.awt.event.KeyListener;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 
-public class Controller extends JFrame implements KeyListener, IController, Runnable{
-    private static final long serialVersionUID = 1L;
+public class Controller implements KeyListener, IController, Runnable{
 	private Board board;
     private int rows=10;
     private int columns=10;
@@ -77,13 +76,18 @@ public class Controller extends JFrame implements KeyListener, IController, Runn
         return board.getCaseContent(line, column);
     }
 	public void updateBoard (int playerRow, int playerColumn, int dx, int dy, boolean isBox) {
-		board.setCell(new EmptyFloor(board.getCell(playerRow, playerColumn).isTarget(),playerRow, playerColumn),playerRow, playerColumn);
-		board.setCell(new Player(board.getCell(playerRow+dx, playerColumn+dy).isTarget(),playerRow+dx, playerColumn+dy),playerRow+dx, playerColumn+dy);
-		if (isBox) {
-			board.setCell(new Box(board.getCell(playerRow+2*dx, playerColumn+2*dy).isTarget(),playerRow+2*dx, playerColumn+2*dy),playerRow+2*dx, playerColumn+2*dy);
-
-		};
-	}
+		boolean manTarget = board.isTarget(playerRow+dx, playerColumn+dy);
+		board.setCell(CaseContent.MAN, playerRow+dx, playerColumn+dy);
+		board.setTarget(playerRow+dx,playerColumn+dy,manTarget);
+		if (!(dx==0 && dy==0)) {if(board.isTarget(playerRow, playerColumn)) {
+			board.setCell(CaseContent.GOAL, playerRow, playerColumn);
+		}else {board.setCell(CaseContent.EMPTY_FLOOR,playerRow,playerColumn);};}
+		else;
+		if (isBox && board.isTarget(playerRow+2*dx, playerColumn+2*dy)) {			
+			board.setCell(CaseContent.BOX_ON_GOAL,playerRow+2*dx,playerColumn+2*dy);
+		}
+		else if (isBox) { board.setCell(CaseContent.BOX, playerRow+2*dx, playerColumn+2*dy);
+		 }	}
 		
 	@Override
 	public void action(Direction direction) {
@@ -252,7 +256,7 @@ public class Controller extends JFrame implements KeyListener, IController, Runn
     	new SokobanWindow(new Controller());
 	}
     public static void main(String[] args) {
-    	SwingUtilities.invokeLater((Runnable) new runGame());
+    	SwingUtilities.invokeLater( new Controller());
     }
 
 }

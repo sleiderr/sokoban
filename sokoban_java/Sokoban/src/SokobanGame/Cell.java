@@ -5,7 +5,7 @@ import control.CaseContent;
 public abstract class Cell {
 	private int row;
 	private int column;
-    protected boolean isTarget;
+    public boolean isTarget;
 
     public Cell(boolean target, int row, int column) {
         this.isTarget=target;
