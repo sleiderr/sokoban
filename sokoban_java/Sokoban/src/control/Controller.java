@@ -82,6 +82,7 @@ public class Controller implements KeyListener, IController, Runnable{
 		if (!(dx==0 && dy==0)) {
 			if(board.isTarget(playerRow, playerColumn)) {
 			board.setCell(CaseContent.GOAL, playerRow, playerColumn);
+			} else {
 				board.setCell(CaseContent.EMPTY_FLOOR,playerRow,playerColumn);
 			}
 		}
