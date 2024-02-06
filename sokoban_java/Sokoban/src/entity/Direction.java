@@ -8,6 +8,7 @@ package entity;
  *
  */
 public enum Direction {
+	NULL,
     UP,
     DOWN,
     LEFT,

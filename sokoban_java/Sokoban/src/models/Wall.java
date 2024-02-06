@@ -1,4 +1,4 @@
-package SokobanGame;
+package models;
 
 import control.CaseContent;
 

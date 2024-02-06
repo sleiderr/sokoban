@@ -21,7 +21,7 @@ import entity.Direction;
 @SuppressWarnings("serial")
 public class SokobanWindow extends JFrame implements KeyListener {
 
-            static final int IMAGE_SIZE = 32;
+	static final int IMAGE_SIZE = 32;
     
     private static final int WINDOW_WIDTH = 10 * IMAGE_SIZE;
 	private static final int WINDOW_HEIGHT = 10 * IMAGE_SIZE;
@@ -54,10 +54,13 @@ public class SokobanWindow extends JFrame implements KeyListener {
             case KeyEvent.VK_DOWN  -> Direction.DOWN;
             case KeyEvent.VK_LEFT  -> Direction.LEFT;
             case KeyEvent.VK_RIGHT -> Direction.RIGHT;
-            default                -> null;
+            default                -> Direction.NULL;
         };
+        
         if( direction == null ) {
-        	System.out.println("error");}
+        	System.out.println("error");
+        }
+        
         controller.action( direction );
         if( controller.isFinished() ) {
         	repaint();

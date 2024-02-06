@@ -1,4 +1,4 @@
-package SokobanGame;
+package models;
 
 public abstract class Floor extends Cell {
 	public Floor(boolean target, int row, int column) {

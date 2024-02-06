@@ -1,4 +1,4 @@
-package SokobanGame;
+package models;
 
 public abstract class Movable extends Floor {
 	public Movable(boolean target, int row, int column) {
