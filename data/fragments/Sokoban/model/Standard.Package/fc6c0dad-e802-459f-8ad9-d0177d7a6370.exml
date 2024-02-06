@@ -21,6 +21,58 @@
         <COMPID name="Wall" mc="Standard.Class" uid="60c127c1-151b-4e84-b013-80d20a87994d"/>
         <COMPID name="Floor" mc="Standard.Class" uid="c654d1e0-ebbb-4dfa-892a-5bf6008921b3"/>
         <COMPID name="Movable" mc="Standard.Class" uid="f141a7db-609b-4902-9293-a2ae6f0db4f2"/>
+        <COMPID name="Position" mc="Standard.Class" uid="36d33209-c7c9-4192-9ea0-e4ece2247f4a"/>
+        <OBJECT>
+          <ID name="Direction" mc="Standard.Enumeration" uid="93e43b60-0962-4aab-b897-b35c9c3f49d3"/>
+          <ATTRIBUTES>
+            <ATT name="IsElementary">true</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="IsLeaf">false</ATT>
+            <ATT name="IsRoot">false</ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="Name"><![CDATA[Direction]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Value">
+              <OBJECT>
+                <ID name="UP" mc="Standard.EnumerationLiteral" uid="49d2d7f7-51e3-4c45-9afe-f701b40f6888"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[UP]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="DOWN" mc="Standard.EnumerationLiteral" uid="41b55a53-1a44-48fa-ad49-821c6ddd9d3e"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[DOWN]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="LEFT" mc="Standard.EnumerationLiteral" uid="9defd773-b66b-4d2a-81f5-32f009747d09"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[LEFT]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="RIGHT" mc="Standard.EnumerationLiteral" uid="bced9437-60ba-42ba-8b25-d0c934cd4fcd"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[RIGHT]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <LINK relation="Extension">
+              <FOREIGNID name="JavaEnumeration" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0262-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
       </COMP>
       <LINK relation="Extension">
         <FOREIGNID name="JavaPackage" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
